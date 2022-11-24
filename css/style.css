@@ -1,9 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #348E38;
-    --secondary: #525368;
-    --light: #E8F5E9;
-    --dark: #0F4229;
+    --primary: #df5025;
+    --secondary: #44bba4;
+    --light: #ffffff;
+    --dark: #3D5A80;
+    --curtain: #3d5a804d;
 }
 
 .back-to-top {
@@ -20,6 +21,7 @@ h2,
 .h2,
 .fw-bold {
     font-weight: 700 !important;
+    color: var(--primary);
 }
 
 h3,
@@ -28,6 +30,7 @@ h4,
 .h4,
 .fw-medium {
     font-weight: 600 !important;
+    color: var(--dark);
 }
 
 h5,
@@ -60,11 +63,18 @@ h6,
     font-weight: 500;
 }
 
-.btn-primary,
+.btn-main,
 .btn-outline-primary:hover {
     color: var(--light);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }
 
+.btn-main:hover{
+    color: var(--primary);
+    background-color: var(--light);
+    border-color: var(--primary)
+}
 .btn-square {
     width: 38px;
     height: 38px;
@@ -95,6 +105,12 @@ h6,
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
+    
+}
+
+.navbar{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+
 }
 
 .navbar .navbar-brand,
@@ -166,7 +182,7 @@ h6,
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(15, 66, 41, .6);
+    /* background: rgba(56, 49, 45, 0.6); */
     z-index: 1;
 }
 
@@ -179,9 +195,10 @@ h6,
 .carousel-control-next-icon {
     width: 3rem;
     height: 3rem;
-    border-radius: 3rem;
+    border-radius: 6rem;
+    padding: 0.25rem;
     background-color: var(--primary);
-    border: 10px solid var(--primary);
+    /* border: 10px solid var(--primary); */
 }
 
 @media (max-width: 768px) {
@@ -199,7 +216,7 @@ h6,
 }
 
 .page-header {
-    background: linear-gradient(rgba(15, 66, 41, .6), rgba(15, 66, 41, .6)), url(../img/carousel-1.jpg) center center no-repeat;
+    background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -223,94 +240,6 @@ h6,
     }
 }
 
-
-/*** Facts & Quote ***/
-.facts,
-.quote {
-    background: rgba(15, 66, 41, .6);
-}
-
-
-/*** Service ***/
-.service-item {
-    position: relative;
-    text-align: center;
-}
-
-.service-item .service-img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.service-item .service-img img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    object-fit: cover;
-    transform: scale(1.2);
-    transition: .3s;
-    z-index: -1;
-}
-
-.service-item:hover .service-img img {
-    transform: scale(1);
-}
-
-.service-item .service-text {
-    background: #FFFFFF;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    transition: .3s;
-}
-
-.service-item:hover .service-text {
-    background: rgba(15, 66, 41, .6);
-}
-
-.service-item .service-text h4,
-.service-item .service-text p {
-    transition: .3;
-}
-
-.service-item:hover .service-text h4 {
-    color: #FFFFFF;
-}
-
-.service-item:hover .service-text p {
-    color: var(--light);
-}
-
-.service-item .service-text .btn-square {
-    width: 100px;
-    height: 100px;
-    background: transparent;
-    transition: .5s;
-}
-
-.service-item:hover .service-text .btn-square {
-    background: var(--light);
-}
-
-.service-item .service-text .btn {
-    width: 31px;
-    height: 31px;
-    display: inline-flex;
-    align-items: center;
-    color: var(--dark);
-    background: var(--light);
-    white-space: nowrap;
-    overflow: hidden;
-    transition: .3s;
-}
-
-.service-item:hover .service-text .btn {
-    width: 112px;
-}
 
 
 /*** Project Portfolio ***/
@@ -348,7 +277,7 @@ h6,
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(15, 66, 41, .6);
+    background: var(--curtain);
     transition: .5s;
 }
 
@@ -359,7 +288,7 @@ h6,
 
 .portfolio-inner:hover::before,
 .portfolio-inner:hover::after {
-    width: 50%;
+    width: 50.02%;
 }
 
 .portfolio-inner .portfolio-text {
@@ -375,6 +304,7 @@ h6,
     transition: .5s;
     z-index: 3;
     opacity: 0;
+    color: var(--secondary);
 }
 
 .portfolio-inner:hover .portfolio-text {
@@ -382,103 +312,16 @@ h6,
     opacity: 1;
 }
 
-.portfolio-inner .portfolio-text .btn {
-    background: var(--light);
-    color: var(--primary);
-}
-
 .portfolio-inner .portfolio-text .btn:hover {
-    background: var(--primary);
-    color: var(--light);
-}
-
-
-/*** Team ***/
-.team-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.team-item .team-text {
-    position: absolute;
-    width: calc(100% - 45px);
-    left: -100%;
-    bottom: 45px;
-    padding: 1.5rem;
-    background: #FFFFFF;
-    border-radius: 0 4px 4px 0;
-    opacity: 0;
-    transition: .5s;
-}
-
-.team-item:hover .team-text {
-    left: 0;
-    opacity: 1;
-}
-
-.team-item .team-social .btn {
     background: var(--light);
     color: var(--primary);
+    border-color: var(--primary);
 }
 
-.team-item .team-social .btn:hover {
+.portfolio-inner .portfolio-text .btn {
     background: var(--primary);
     color: var(--light);
 }
-
-.team-item .team-img .team-social {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: .5s;
-    z-index: 3;
-    opacity: 0;
-}
-
-.team-item:hover .team-img .team-social {
-    transition-delay: .3s;
-    opacity: 1;
-}
-
-
-/*** Testimonial ***/
-
-.testimonial-carousel .owl-item img {
-    width: 100px;
-    height: 100px;
-}
-
-.testimonial-carousel .owl-nav {
-    margin-top: 30px;
-    display: flex;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    margin-right: 15px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    background: var(--light);
-    border-radius: 4px;
-    font-size: 22px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    background: var(--primary);
-    color: var(--light);
-}
-
 
 /*** Footer ***/
 .footer .btn.btn-link {
@@ -508,13 +351,13 @@ h6,
 
 .copyright {
     color: var(--light);
-    background: #072A19;
+    background: var(--secondary);
 }
 
 .copyright a {
-    color: #FFFFFF;
+    color: var(--light);
 }
 
 .copyright a:hover {
-    color: var(--primary);
+    color: var(--dark);
 }

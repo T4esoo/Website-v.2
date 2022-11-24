@@ -1,0 +1,11 @@
+:root {
+    --primary: #df5025;
+    --secondary: #44bba4;
+    --light: #ffffff;
+    --dark: #3D5A80;
+    --curtain: #3d5a804d;
+}
+
+.curtainText{
+    color: var(--dark);
+}
