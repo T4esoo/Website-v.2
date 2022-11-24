@@ -21,7 +21,7 @@ h2,
 .h2,
 .fw-bold {
     font-weight: 700 !important;
-    color: var(--primary);
+    color: var(--primary) !important;
 }
 
 h3,
