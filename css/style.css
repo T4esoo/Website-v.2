@@ -80,6 +80,11 @@ h6,
     height: 38px;
 }
 
+.btn:focus{
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #df502538;
+}
+
 .btn-sm-square {
     width: 32px;
     height: 32px;
@@ -115,7 +120,7 @@ h6,
 
 .navbar .navbar-brand,
 .navbar a.btn {
-    height: 80px
+    height: 80px;
 }
 
 .navbar .navbar-nav .nav-link {
