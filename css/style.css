@@ -340,6 +340,10 @@ h6,
     transition: .3s;
 }
 
+.text-primary {
+    color: var(--primary) !important;
+}
+
 .footer .btn.btn-link::before {
     position: relative;
     content: "\f105";
