@@ -30,15 +30,14 @@ h4,
 .h4,
 .fw-medium {
     font-weight: 600 !important;
-    color: var(--dark);
+    color: var(--dark) !important;
 }
 
 h5,
 .h5,
-h6,
-.h6,
 .fw-semi-bold {
     font-weight: 500 !important;
+    color: var(--secondary) !important;
 }
 
 

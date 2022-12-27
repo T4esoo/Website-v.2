@@ -9,3 +9,10 @@
 .curtainText{
     color: var(--dark);
 }
+
+h6,
+.h6,
+.fw-semi-bold {
+    font-size: 10px;
+    color: var(--dark) !important;
+}

@@ -101,6 +101,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded">
+                        <img class="img-fluid" src="img/Misc/PumpkinCandle.png" alt="">
+                        <h4 class="curtainText text-center pt-1">Miscellaneous</h4>
+                        <div class="portfolio-text">
+                            <div class="d-flex">
+                                <a class="btn btn-project" data-bs-toggle="modal" href="#MiscModal" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -119,16 +130,40 @@
                             <div id="GoggleCarousel" class="carousel slide col-md-6" data-ride="carousel">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img class="d-block w-100" src="img/Goggles/Integration.png" alt="First slide">
-                                        <h4 class="text-center p-2">Example Subtitle</h4>
+                                        <img class="d-block w-100" src="img/Goggles/MITERS2.png" alt="First slide">
+                                        <h5 class="text-center p-2">Original Fitment Check w/ Sketch Helmet Mount</h5>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="img/Goggles/FinalIntegration.png" alt="Second slide">
-                                        <h4 class="text-center p-2">Example Subtitle</h4>
+                                        <img class="d-block w-100" src="img/Goggles/CameraTest.png" alt="Second slide">
+                                        <h5 class="text-center p-2">Camera Test</h5>
                                     </div>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100" src="img/Goggles/DarkTest2.png" alt="Third slide">
-                                        <h4 class="text-center p-2">Example Subtitle</h4>
+                                        <img class="d-block w-100" src="img/Goggles/DarkTest3.png" alt="Third slide">
+                                        <h5 class="text-center p-2">Dark Room Test</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/DarkTest3Comparison.png" alt="Eighth slide">
+                                        <h5 class="text-center p-2">Comparison with iPhone Camera (The goggles deserve more credit because the iPhone has long exposure)</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/Integration.png" alt="Fourth slide">
+                                        <h5 class="text-center p-2">Part Integration Layout</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/PaintBooth1.png" alt="Fifth slide">
+                                        <h5 class="text-center p-2">Exterior Painting</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/FinalIntegration.png" alt="Sixth slide">
+                                        <h5 class="text-center p-2">Re-assembly After Painting</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/FinalAssembly.png" alt="Seventh slide">
+                                        <h5 class="text-center p-2">Final Assembled Product</h5>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="img/Goggles/PhotoShoot2.png" alt="Ninth slide">
+                                        <h5 class="text-center p-2">Mounted to Helmet Properly (Note: GoPro helmet mount for quick disconnect and added IR flashlight)</h5>
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#GoggleCarousel" role="button" data-bs-slide="prev">
@@ -141,8 +176,24 @@
                                 </a>
                             </div>
                                 <div class="col-md-6">
-                                    <h3>Project subtitle</h3>
-                                    <p> This is body text</p>
+                                    <h5>For my second official project,</h5>
+                                        I wanted to build another fun and functional device, and thanks to ProjX funding, I had a $500 budget. This turned out to be perfect for building this pair (or two pairs?) of night vision goggles which I had been interested in creating. Besides the cool factor due to its similarity to a videogame, I thought they might be useful for traversing a dark room after my roommates went to sleep. </p> 
+
+                                        <h5>The Specs:</h5>
+                                        - Each “tube” of the goggles is a functionally independent module. <br>
+                                        - A Foxeer Night Cat 3 camera at the front takes in visible and IR light, which it passes onto the display. <br>
+                                        - The displays are 1.5” TFT screens made by Adafruit, which display the analog output from the cameras. <br>
+                                </p>
+                                        The light from the display passes through a biconvex lens. The lens corrects the picture so the screen is clear, which is important due to the distance between the screen and your eye. This helps prevent eye strain which can be caused by your eyes constantly trying to focus on the screens
+                                </p>
+                                        Going forward, I want to improve the design by
+                                        - waterproofing the goggles as I’d originally intended <br>
+                                        - redesigning the suspension/mounting solution so that the goggles are more rigidly connected
+                                        to the helmet <br>
+                                        - Painting the inside of the tubes black so the brightness from the screens is less overwhelming. </p>
+                                        <h6>Disclaimer: The original project files (.stl files & parts list) were taken from the BPNVG project. However, I did ample modification (rebuilding/remodeling in CAD) to where I believe these goggles are a new revision and unique to those of others in both design and construction.</h6>
+
+                                    </p>
                                 </div>
                         </div>
                     </div>
@@ -155,7 +206,7 @@
     <!-- Goggle Modal -->  
 
     <!-- Scooter Modal -->  
-        <!-- <div class="modal fade" id="ScooterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ScooterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -199,7 +250,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     <!-- Scooter Modal -->
 
     <!-- Copyright Start -->
