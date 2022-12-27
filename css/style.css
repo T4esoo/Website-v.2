@@ -40,6 +40,12 @@ h5,
     color: var(--secondary) !important;
 }
 
+h6,
+.h6,
+.fw-semi-bold {
+    font-size: 10px;
+    color: var(--dark) !important;
+}
 
 /*** Spinner ***/
 #spinner {
