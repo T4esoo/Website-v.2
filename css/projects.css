@@ -16,3 +16,8 @@ h6,
     font-size: 10px;
     color: var(--dark) !important;
 }
+
+.hyperlink{
+    color: var(--dark) !important;
+    text-decoration: underline
+}
