@@ -201,6 +201,14 @@ h6,
     width: 15%;
 }
 
+.px-lg-5{
+    padding-right: 3rem !important;
+    padding-left: 1rem !important;
+}
+.px-l1{
+    padding-left: 5px !important;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     width: 3rem;
