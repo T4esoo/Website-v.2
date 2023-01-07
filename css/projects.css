@@ -21,3 +21,7 @@ h6,
     color: var(--dark) !important;
     text-decoration: underline
 }
+
+.modal-xl {
+    max-width: 80%;
+}
