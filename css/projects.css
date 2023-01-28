@@ -18,7 +18,7 @@ h6,
 }
 
 .hyperlink{
-    color: var(--dark) !important;
+    color: var(--secondary) !important;
     text-decoration: underline
 }
 

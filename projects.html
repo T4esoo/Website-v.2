@@ -520,12 +520,12 @@
                                 <h5 class="text-center p-2">8- Completed Bike with Accessories</h5>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="img/Bike/Planks.webp" loading="lazy" alt="Ninth slide">
-                                <h5 class="text-center p-2">9- </h5>
+                                <img class="d-block w-100" src="img/Bike/BasketCad.webp" loading="lazy" alt="Ninth slide">
+                                <h5 class="text-center p-2">9- CAD Design for Basket in SolidWorks</h5>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="img/Bike/" loading="lazy" alt="Tenth slide">
-                                <h5 class="text-center p-2">10- </h5>
+                                <img class="d-block w-100" src="img/Bike/Planks.webp" loading="lazy" alt="Tenth slide">
+                                <h5 class="text-center p-2">10- Varnished Wood Planks for Basket Bottom</h5>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#BikeCarousel" role="button" loading="lazy" data-bs-slide="prev">
@@ -538,8 +538,30 @@
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <h5>Subtitle</h5>
-                        <p>Text</p>
+                        <h5>Tangerine is the bike</h5>
+                        <p>I built during <a class="hyperlink" href="https://elo.mit.edu/iap/" target="_blank" rel="noopener noreferrer">IAP</a> 2023 through the <a class="hyperlink" href="https://d-lab.mit.edu/news-blog/blog/mit-d-lab-iap-build-your-own-bike-class" target="_blank" rel="noopener noreferrer">D-Lab class EC.S02</a>. 
+                            It's a single speed road bike with an emphasis on modularity. 
+                            While the bike was only supposed to take a few days of work to complete, 
+                            I added lots of details and tweaks to the class design that made the project more fun, 
+                            but also more complex to complete. The steps I took in rough chronological order are the following:
+                        </p>
+                        <ol type="1">
+                            <li>Prepare frame parts</li>
+                            <li>Weld frame tubes</li>
+                            <li> Ream & finish frame for part mounting</li>
+                            <li> Assemble bike and components</li>
+                            <li>Disassemble bike</li>
+                            <li>Design and fabricate accessory mounts</li>
+                            <li>Weld mounts to frame</li>
+                            <li>Design decal stencils</li>
+                            <li>Tape off frame for sandblasting</li>
+                            <li>Sandblast frame & components</li>
+                            <li>Paint frame</li>
+                            <li>Reassemble bike</li>
+                            <li>Accessorize</li>
+                          </ol>
+                        <p>Writing it out, 13 steps doesn't sound so bad for such a good end product but in reality there's actually 
+                            3-10 sub-steps to each step. </p>
                     </div>
                 </div>
             </div>
@@ -743,6 +765,14 @@
     
 <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        window.onload = function() {
+            if(!window.location.hash) {
+                window.location = window.location + '#loaded';
+                window.location.reload();
+            }
+        }
+    </script>
 </body>
 
 </html>
