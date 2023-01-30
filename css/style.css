@@ -7,6 +7,10 @@
     --curtain: #3d5a804d;
 }
 
+.modal-xl {
+    max-width: 80%;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
