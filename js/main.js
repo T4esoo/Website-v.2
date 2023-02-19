@@ -15,6 +15,21 @@
     // Initiate the wowjs
     new WOW().init();
 
+    //Konami
+    function onKonamiCode(cb) {
+        var input = '';
+        var key = '38384040373937396665';
+        document.addEventListener('keydown', function (e) {
+          input += ("" + e.keyCode);
+          if (input === key) {
+            return cb();
+          }
+          if (!key.indexOf(input)) return;
+          input = ("" + e.keyCode);
+        });
+      }
+      
+      onKonamiCode(function () {alert('\o/')})
 
     // Sticky Navbar
     $(window).scroll(function () {
@@ -40,12 +55,6 @@
     });
 
 
-    // Facts counter
-    $('[data-toggle="counter-up"]').counterUp({
-        delay: 10,
-        time: 2000
-    });
-
 
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
@@ -59,20 +68,6 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
 
-
-    // Testimonials carousel
-    $(".testimonial-carousel").owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        items: 1,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText : [
-            '<i class="bi bi-chevron-left"></i>',
-            '<i class="bi bi-chevron-right"></i>'
-        ]
-    });
 
 
 })(jQuery);
