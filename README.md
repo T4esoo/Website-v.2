@@ -1,2 +1,2 @@
-# Webstite v.2
+# Website v.2
  Personal website revamp
