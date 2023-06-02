@@ -85,7 +85,7 @@
             <div class="row g-4 portfolio-container">
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                     <div class="portfolio-inner rounded">
-                        <img class="img-fluid" src="img/Goggles/FinalAssembly.webp" alt="Goggles">
+                        <img class="img-fluid" src="img/Goggles/PhotoShoot2.webp" alt="Goggles">
                         <h4 class="curtainText text-center pt-1">DIY Night Vision</h4>
                         <div class="portfolio-text">
                             <div class="d-flex">
@@ -118,11 +118,33 @@
                 </div>
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                     <div class="portfolio-inner rounded">
-                        <img class="img-fluid" src="img/Bike/Painted.webp" alt="Bike on Vice" width="100%">
+                        <img class="img-fluid" src="img/Bike/Esplanade.webp" alt="Bike on Vice" width="100%">
                         <h4 class="curtainText text-center pt-1">DIY Bike</h4>
                         <div class="portfolio-text">
                             <div class="d-flex">
                                 <a class="btn btn-project" data-bs-toggle="modal" href="#BikeModal" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded">
+                        <img class="img-fluid" src="img/Electrowetting/Plasma.webp" alt="" width="100%">
+                        <h4 class="curtainText text-center pt-1">Electrowetting Valve UROP</h4>
+                        <div class="portfolio-text">
+                            <div class="d-flex">
+                                <a class="btn btn-project" data-bs-toggle="modal" href="#ElectrowettingModal" role="button">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="portfolio-inner rounded">
+                        <img class="img-fluid" src="img/FPV/Toretto.webp" alt="" width="100%">
+                        <h4 class="curtainText text-center pt-1">FPV Drones</h4>
+                        <div class="portfolio-text">
+                            <div class="d-flex">
+                                <a class="btn btn-project" data-bs-toggle="modal" href="#FPVModal" role="button">See More</a>
                             </div>
                         </div>
                     </div>
@@ -175,7 +197,6 @@
         </div>
     </div>
 <!-- Projects End -->
-
 
 <!-- Goggle Modal -->  
     <div class="modal fade" id="GoggleModal" tabindex="-1" aria-labelledby="DIY Night Vision Modal" aria-hidden="true">
@@ -484,8 +505,9 @@
                                 After slowly charging the row to balance the battery pack manually, I tried charging the battery from a bench power supply. 
                                 Immediately after I turned on the power supply, the nickel strips connecting the cells turned red hot, meaning something was seriously 
                                 wrong with my pack. </p>
-                            <h5>So I'm also stuck on this project</h5>
-                            <p>pending the disassembly of the battery, which would be difficult to do without damaging the battery or buying new cells.</p>
+                            <h5>As of now, </h5>
+                            <p>I've decided to stop this project because I don't want to buy new cells for a new battery, and I've moved away from scooters. 
+                                I realized that building a high-power vehicle like this wasn't moving in a safe direction. </p>
                         </div>
                     </div>
                 </div>
@@ -590,7 +612,10 @@
                             I haven't ridden a bike seriously in a while. As for the basket, I've made a design but have yet to finish it since I already have a back rack 
                             that is sufficient to hold my backpack or my groceries. </p>
                         <h5>Going forward,</h5>
-                        <p>I'm excited to ride Tangerine more and all the places we'll go to in the future.</p>
+                        <p>I'm excited to ride Tangerine more and all the places we'll go to in the future. 
+                            I'm also considering electrifying Tangerine using the mounting brackets I welded during the initial construction. 
+                            I found a front wheel hub motor and have done some research on potential battery packs. 
+                        </p>
                         <h5>Furthest distance biked from Maseeh (as the crow flies):</h5> 
                             <p>4.52 mi (7.27 km)</p>
                     </div>
@@ -603,6 +628,134 @@
     </div>
 </div>
 <!-- Bike Modal -->
+
+<!-- Electrowetting Modal -->  
+<div class="modal fade" id="ElectrowettingModal" tabindex="-1" aria-labelledby="Electrowetting Modal" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h3 class="modal-title" id="Electrowetting Modal">TITLE</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-4">
+                    <div id="ElectrowettingCarousel" class="carousel slide col-md-6" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="img/Electrowetting/Defect.webp" loading="lazy" alt="First slide">
+                                <h5 class="text-center p-2">1- Chip with defective non-uniform surface finish</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/EarlyMount.webp" loading="lazy" alt="Second slide">
+                                <h5 class="text-center p-2">2- First iteration of spin coating jig</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/NewSpin.webp" loading="lazy" alt="Third slide">
+                                <h5 class="text-center p-2">3- Final, improved spin coating jig</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/Tachometer.webp" loading="lazy" alt="Fourth slide">
+                                <h5 class="text-center p-2">4- Tachometer to verify spin coating procedure</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/ValveLineup.webp" loading="lazy" alt="Fifth slide">
+                                <h5 class="text-center p-2">5- Batch of testing valves before ashing</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/Plasma.webp" loading="lazy" alt="Sixth slide">
+                                <h5 class="text-center p-2">6- Blanks being ashed</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/Curing.webp" loading="lazy" alt="Seventh slide">
+                                <h5 class="text-center p-2">7- Curing precursor valves on hotplate</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/ContactAngle.webp" loading="lazy" alt="Eighth slide">
+                                <h5 class="text-center p-2">8- Measuring contact angle with digital microscope setup</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/Electrowetting/Tank.webp" loading="lazy" alt="Ninth slide">
+                                <h5 class="text-center p-2">9- Thruster tank mid-assembly</h5>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#ElectrowettingCarousel" role="button" loading="lazy" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#ElectrowettingCarousel" role="button" loading="lazy" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                       </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Header</h5>
+                        <p>Body</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Electrowetting Modal -->
+
+<!-- FPV Modal -->  
+<div class="modal fade" id="FPVModal" tabindex="-1" aria-labelledby="FPV Modal" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h3 class="modal-title" id="FPV Modal">TITLE</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row g-4">
+                    <div id="FPVCarousel" class="carousel slide col-md-6" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="img/FPV/BigDrone.webp" loading="lazy" alt="First slide">
+                                <h5 class="text-center p-2">1- Large 5" prop drone</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/FPV/Toretto.webp" loading="lazy" alt="Second slide">
+                                <h5 class="text-center p-2">2- Smaller 3" Toretto quad</h5>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/FPV/SmallestDrone.webp" loading="lazy" alt="Third slide">
+                                <h5 class="text-center p-2">3- Small drone</h5>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#FPVCarousel" role="button" loading="lazy" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#FPVCarousel" role="button" loading="lazy" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                       </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Sometime in April 2023</h5>
+                        <p>I was generously gifted some FPC drones and related equipment from an MIT alumni. It was a bag of props, a few drones, 
+                            a goggle set, and a transmitter. Since I got it, I've flown the Toretto a few times with limited success before schwacking 
+                            (the technical term) the antenna, making both medium-sized drones nonfunctional. In addition, the 5” quad needs a new transceiver entirely. 
+                            I'm looking into finding a replacement antenna for the Toretto, but it's difficult to source components since these have been mostly discontinued products. 
+                        </p>
+                        <h5>As of now,</h5>
+                        <p>I'm looking forward to learning more about these FPV drones, repairing them, learning how to fly them properly, and hopefully getting some cool 
+                            footage and fly time around campus and/or my local area in Washington. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FPV Modal -->
 
 <!-- VinylCutting Modal -->  
 <div class="modal fade" id="VinylCuttingModal" tabindex="-1" aria-labelledby="VinylCutting Modal" aria-hidden="true">
@@ -719,8 +872,24 @@
                        </a>
                     </div>
                     <div class="col-md-6">
-                        <h5>Header</h5>
-                        <p>Body</p>
+                        <h5>This project is my recreation</h5>
+                        <p>of <a class="hyperlink" href="https://en.wikipedia.org/wiki/MF_Doom" target="_blank" rel="noopener noreferrer">Daniel Dumile's</a> (MF DOOM) gladiator mask. I have always wanted to make an aesthetic piece out of something that was 3D printed, 
+                            so when I heard of the passing of the Madvillan, I wanted to make this project my introduction to finishing 3D prints and a tribute to him as a fan. 
+                        </p>
+                        <h5>Initially, I 3D printed</h5>
+                        <p> a model of the gladiator mask I found on Thingiverse or somewhere online. I followed a YouTube tutorial using automotive filler spray paint and a range of 
+                            sandpaper from 200-1400 grit. The tutorial also called for using Bondo filler putty, but there weren't any sections that I deemed required this part, so I 
+                            skipped it during the finishing process. 
+                        </p>
+                        <h5>Following the finishing procedure,</h5>
+                        <p>I initially sanded the model with low-grit sandpaper before applying a few coats of the automotive filler primer. 
+                            After sanding and repeating this another time or two, I sprayed on a few coats of metallic-colored paint to get the iconic look. 
+                        </p>
+                        <h5>That's That</h5>
+                        <p>Overall, I'm pretty happy with how the piece came out. I know some imperfections with some of the finish, but I think they all add to the mask's personality. 
+                            Making this mask was a great experience in learning how to finish 3D prints, and I look forward to the next opportunity to apply what I learned during this 
+                            short project.
+                        </p>
                     </div>
                 </div>
             </div>
