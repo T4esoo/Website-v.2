@@ -11,6 +11,11 @@
     max-width: 80%;
 }
 
+.hyperlink{
+    color: var(--secondary) !important;
+    text-decoration: underline
+}
+
 .back-to-top {
     position: fixed;
     display: none;
