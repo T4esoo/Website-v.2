@@ -124,7 +124,7 @@
                 <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
                     <div class="portfolio-inner rounded">
                         <img class="img-fluid" src="img/RocketProp/Preview.webp" alt="Candle Holder">
-                        <h4 class="curtainText text-center pt-1">Rocket Engine</h4>
+                        <h4 class="curtainText text-center pt-1">Rocket Engine Deneb</h4>
                         <div class="portfolio-text">
                             <div class="d-flex">
                                 <a class="btn btn-project" data-bs-toggle="modal" href="#RocketPropModal" role="button">See More</a>
@@ -164,7 +164,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-            <h3 class="modal-title" id="RocketProp Modal">(WIP) Personal Rocket Engine</h3>
+            <h3 class="modal-title" id="RocketProp Modal">(WIP) Personal Rocket Engine - Deneb</h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -423,43 +423,53 @@
 </div>
 <!-- Electrowetting Modal -->
 
+<div style="padding: 50px;">
+</div>
 
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 text-center text-md-start mb-2 mb-md-0">
-                    &copy; <a class="border-bottom" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">netb.me</a>
+<!-- Copyright Start -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center text-md-start mb-2 mb-md-0">
+                &copy; <a class="border-bottom" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">netb.me</a>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+                <div class="d-flex p-2 justify-content-center">
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.linkedin.com/in/netb/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-square btn-outline-light rounded-circle me-2" href="contact.html"><i class="fa fa-envelope"></i></a>
                 </div>
-                <div class="col-md-4 text-center text-md-end">
-                    <div class="d-flex p-2 justify-content-center">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.linkedin.com/in/netb/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="contact.html"><i class="fa fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center text-md-end">
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
-                </div>
+            </div>
+            <div class="col-md-4 text-center text-md-end">
+                Designed By <a class="border-bottom" href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a> Distributed By <a href="https://themewagon.com">ThemeWagon</a>
             </div>
         </div>
     </div>
-    <!-- Copyright End -->
+</div>
+<!-- Copyright End -->
 
     
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/parallax/parallax.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/parallax/parallax.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    window.onload = function() {
+        if(!window.location.hash) {
+            window.location = window.location + '#load';
+            window.location.reload();
+        }
+    }
+</script>
 </body>
 
 </html>
