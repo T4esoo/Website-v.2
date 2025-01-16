@@ -311,6 +311,13 @@ h6,
     overflow: hidden;
 }
 
+.portfolio-item {
+    min-height: 350px; /* Adjust based on content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
 .portfolio-inner::before,
 .portfolio-inner::after {
     position: absolute;
