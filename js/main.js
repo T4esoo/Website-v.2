@@ -68,6 +68,33 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
 
+    $(document).ready(function() {
+        var $container = $('.portfolio-container');
+        var $filters = $('#portfolio-flters li');
+      
+        // Wait for images to load before Isotope layout
+        $container.imagesLoaded( function() {
+          // Initialize Isotope with fitRows
+          $container.isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows'
+          });
+        });
+      
+        // Set up filter buttons
+        $filters.on('click', function() {
+          $filters.removeClass('active');
+          $(this).addClass('active');
+          var filterValue = $(this).data('filter');
+          $container.isotope({ filter: filterValue });
+        });
+      
+        // Optional: Force layout again on window load
+        $(window).on('load', function() {
+          $container.isotope('layout');
+        });
+      });
+      
 
 
 })(jQuery);
