@@ -88,11 +88,6 @@
           var filterValue = $(this).data('filter');
           $container.isotope({ filter: filterValue });
         });
-      
-        // Optional: Force layout again on window load
-        $(window).on('load', function() {
-          $container.isotope('layout');
-        });
       });
       
 
