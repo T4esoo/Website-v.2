@@ -56,39 +56,36 @@
 
 
 
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('active');
-        $(this).addClass('active');
+    // Portfolio isotope and filter (only on pages that include isotope + a portfolio)
+    if ($.fn.isotope && $('.portfolio-container').length) {
+        $(document).ready(function() {
+            var $container = $('.portfolio-container');
+            var $filters = $('#portfolio-flters li');
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
+            function initIsotope() {
+              $container.isotope({
+                itemSelector: '.portfolio-item',
+                layoutMode: 'fitRows'
+              });
+            }
 
-    $(document).ready(function() {
-        var $container = $('.portfolio-container');
-        var $filters = $('#portfolio-flters li');
-      
-        // Wait for images to load before Isotope layout
-        $container.imagesLoaded( function() {
-          // Initialize Isotope with fitRows
-          $container.isotope({
-            itemSelector: '.portfolio-item',
-            layoutMode: 'fitRows'
-          });
+            // Wait for images to load before Isotope layout (imagesLoaded is
+            // bundled with isotope.pkgd; fall back to direct init if unavailable)
+            if ($.fn.imagesLoaded) {
+              $container.imagesLoaded(initIsotope);
+            } else {
+              initIsotope();
+            }
+
+            // Set up filter buttons
+            $filters.on('click', function() {
+              $filters.removeClass('active');
+              $(this).addClass('active');
+              var filterValue = $(this).data('filter');
+              $container.isotope({ filter: filterValue });
+            });
         });
-      
-        // Set up filter buttons
-        $filters.on('click', function() {
-          $filters.removeClass('active');
-          $(this).addClass('active');
-          var filterValue = $(this).data('filter');
-          $container.isotope({ filter: filterValue });
-        });
-      });
+    }
       
 
 

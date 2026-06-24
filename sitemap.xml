@@ -4,39 +4,31 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
 
 <url>
   <loc>https://netb.me/</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
+  <lastmod>2026-06-24</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://netb.me/index.html</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://netb.me/projects.html</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
+  <lastmod>2026-06-24</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://netb.me/cv.html</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
+  <lastmod>2026-06-24</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://netb.me/photography.html</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
+  <lastmod>2026-06-24</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://netb.me/contact.html</loc>
-  <lastmod>2025-05-06T03:39:37+00:00</lastmod>
+  <lastmod>2026-06-24</lastmod>
   <priority>0.80</priority>
 </url>
-
 
 </urlset>

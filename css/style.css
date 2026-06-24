@@ -7,6 +7,22 @@
     --curtain: #3d5a804d;
 }
 
+/* Sticky footer: keep the copyright bar at the bottom of the viewport on
+   short pages (CV, photography, contact) instead of floating mid-page. */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.copyright {
+    margin-top: auto;
+}
+
 .modal-xl {
     max-width: 80%;
 }
