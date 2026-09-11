@@ -1,10 +1,44 @@
-/********** Template CSS **********/
+/********** netb.me — design system **********/
+
 :root {
+    /* Brand */
     --primary: #df5025;
     --secondary: #44bba4;
     --light: #ffffff;
     --dark: #3D5A80;
     --curtain: #3d5a804d;
+
+    /* Surfaces & ink */
+    --surface-0: #faf9f7;
+    --surface-1: #ffffff;
+    --surface-sunken: #f2f0ed;
+    --ink-900: #1b2733;
+    --ink-700: #3D5A80;
+    --ink-500: #6b7c93;
+    --ink-300: #a8b4c2;
+    --hairline: rgba(27, 39, 51, 0.08);
+
+    /* Elevation */
+    --shadow-1: 0 1px 2px rgba(27, 39, 51, 0.06), 0 1px 3px rgba(27, 39, 51, 0.05);
+    --shadow-2: 0 4px 12px rgba(27, 39, 51, 0.08), 0 1px 3px rgba(27, 39, 51, 0.06);
+    --shadow-3: 0 12px 32px rgba(27, 39, 51, 0.12), 0 2px 8px rgba(27, 39, 51, 0.06);
+
+    /* Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1.125rem;
+    --radius-pill: 999px;
+
+    /* Motion — strong curves; the built-in CSS easings are too weak */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+    --dur-press: 140ms;
+    --dur-hover: 200ms;
+    --dur-panel: 250ms;
+    --dur-overlay: 300ms;
+    --dur-reveal: 460ms;
 }
 
 /* Sticky footer: keep the copyright bar at the bottom of the viewport on
@@ -17,80 +51,183 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--surface-0);
+    color: var(--ink-900);
+    font-family: "Open Sans", system-ui, sans-serif;
+    line-height: 1.65;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 .copyright {
     margin-top: auto;
 }
 
-.modal-xl {
-    max-width: 80%;
+/*** Typography — tracking and leading are size-specific, never one value ***/
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: "Jost", system-ui, sans-serif;
+    font-optical-sizing: auto;
 }
 
-.hyperlink{
-    color: var(--secondary) !important;
-    text-decoration: underline
+.display-1, .display-2, .display-3 {
+    line-height: 1.04;
+    letter-spacing: -0.03em;
 }
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 30px;
-    bottom: 30px;
-    z-index: 99;
+.display-4, .display-5, .display-6 {
+    line-height: 1.1;
+    letter-spacing: -0.022em;
 }
 
-h1,
-.h1,
-h2,
-.h2,
-.fw-bold {
+h1, .h1, h2, .h2 {
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+}
+
+h3, .h3, h4, .h4 {
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+}
+
+h5, .h5 {
+    line-height: 1.35;
+    letter-spacing: -0.006em;
+}
+
+p {
+    max-width: 68ch;
+}
+
+small, .small {
+    letter-spacing: 0.01em;
+}
+
+h1, .h1, h2, .h2, .fw-bold {
     font-weight: 700 !important;
     color: var(--primary) !important;
 }
 
-h3,
-.h3,
-h4,
-.h4,
-.fw-medium {
+h3, .h3, h4, .h4, .fw-medium {
     font-weight: 600 !important;
-    color: var(--dark) !important;
+    color: var(--ink-700) !important;
 }
 
-h5,
-.h5,
-.fw-semi-bold {
+h5, .h5, .fw-semi-bold {
     font-weight: 500 !important;
     color: var(--secondary) !important;
 }
 
-h6,
-.h6,
-.fw-semi-bold {
-    font-size: 10px;
-    color: var(--dark) !important;
+h6, .h6, .fw-semi-bold {
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-700) !important;
+}
+
+.hyperlink {
+    color: var(--secondary) !important;
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+    text-decoration-thickness: 1px;
+    transition: color var(--dur-hover) ease;
+}
+
+.hyperlink:hover {
+    color: var(--primary) !important;
+}
+
+.section-lead {
+    color: var(--ink-500);
+    font-size: 1.0625rem;
+}
+
+.modal-xl {
+    max-width: 80%;
+}
+
+/*** Focus — visible for keyboard, quiet for mouse ***/
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+/*** Scroll reveal — transitions, not keyframes, so they retarget cleanly ***/
+.reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+        opacity var(--dur-reveal) var(--ease-out),
+        transform var(--dur-reveal) var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: transform, opacity;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+}
+
+/* Media tiles wipe up from the bottom edge rather than sliding */
+.reveal-clip {
+    clip-path: inset(0 0 100% 0);
+    transition:
+        opacity var(--dur-reveal) var(--ease-out),
+        transform var(--dur-reveal) var(--ease-out),
+        clip-path var(--dur-reveal) var(--ease-out);
+}
+
+.reveal-clip.is-visible {
+    clip-path: inset(0 0 0 0);
+}
+
+/* No JS (or an observer that never fires) must never hide content */
+.no-js .reveal,
+.reveal.is-static {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
 }
 
 /*** Spinner ***/
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    background-color: var(--surface-0) !important;
+    transition: opacity var(--dur-panel) var(--ease-out), visibility 0s linear var(--dur-panel);
     z-index: 99999;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    transition: opacity var(--dur-panel) var(--ease-out), visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
 }
 
+/* A faster spinner makes the load feel faster, even when it isn't */
+#spinner .spinner-border {
+    border-width: 3px;
+    animation-duration: 0.6s;
+    color: var(--primary) !important;
+}
 
-/*** Button ***/
+/*** Buttons ***/
 .btn {
-    transition: .5s;
     font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: var(--radius-pill);
+    transition:
+        color var(--dur-hover) ease,
+        background-color var(--dur-hover) ease,
+        border-color var(--dur-hover) ease,
+        box-shadow var(--dur-hover) ease,
+        transform var(--dur-press) var(--ease-out);
+}
+
+.btn:active {
+    transform: scale(0.97);
 }
 
 .btn-main,
@@ -98,19 +235,34 @@ h6,
     color: var(--light);
     background-color: var(--primary);
     border-color: var(--primary);
+    box-shadow: var(--shadow-1);
 }
 
-.btn-main:hover{
+.btn-main:hover {
     color: var(--primary);
     background-color: var(--light);
-    border-color: var(--primary)
+    border-color: var(--primary);
+    box-shadow: var(--shadow-2);
 }
+
+.btn-quiet {
+    color: var(--ink-700);
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    box-shadow: var(--shadow-1);
+}
+
+.btn-quiet:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
 .btn-square {
     width: 38px;
     height: 38px;
 }
 
-.btn:focus{
+.btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0.25rem #df502538;
 }
@@ -135,17 +287,59 @@ h6,
     font-weight: normal;
 }
 
-
-/*** Navbar ***/
-.navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
-    
+.back-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.96);
+    transition:
+        opacity var(--dur-panel) var(--ease-out),
+        transform var(--dur-panel) var(--ease-out),
+        visibility 0s linear var(--dur-panel);
 }
 
-.navbar{
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    transition-delay: 0s;
+}
 
+/*** Navbar — a translucent layer content scrolls under ***/
+.site-nav {
+    background-color: rgba(250, 249, 247, 0.72);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: none;
+    transition:
+        background-color var(--dur-panel) ease,
+        box-shadow var(--dur-panel) ease;
+}
+
+/* Scroll edge effect: a soft fade where content meets the floating chrome,
+   instead of a hard 1px divider that is always on. */
+.site-nav::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 16px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(27, 39, 51, 0.06), rgba(27, 39, 51, 0));
+    opacity: 0;
+    transition: opacity var(--dur-panel) ease;
+}
+
+.site-nav.is-scrolled {
+    background-color: rgba(250, 249, 247, 0.86);
+}
+
+.site-nav.is-scrolled::after {
+    opacity: 1;
 }
 
 .navbar .navbar-brand,
@@ -153,18 +347,62 @@ h6,
     height: 80px;
 }
 
-.navbar .navbar-nav .nav-link {
-    margin-right: 35px;
-    padding: 25px 0;
-    color: var(--dark);
-    font-size: 18px;
-    font-weight: 500;
-    outline: none;
+.navbar .navbar-brand h1 {
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
 }
 
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
+.navbar .navbar-brand img {
+    transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.navbar .navbar-nav .nav-link {
+    position: relative;
+    margin-right: 35px;
+    padding: 25px 0;
+    color: var(--ink-700);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    outline: none;
+    transition: color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
+}
+
+/* Underline grows from the centre — transform, so it never triggers layout */
+.navbar .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 18px;
+    height: 2px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.navbar .navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover {
     color: var(--primary);
+}
+
+.navbar .navbar-nav .nav-link:active {
+    transform: scale(0.97);
+}
+
+.navbar-toggler {
+    border-color: var(--hairline);
+    transition: transform var(--dur-press) var(--ease-out);
+}
+
+.navbar-toggler:active {
+    transform: scale(0.97);
 }
 
 .navbar .dropdown-toggle::after {
@@ -176,38 +414,38 @@ h6,
     margin-left: 8px;
 }
 
+@media (hover: hover) and (pointer: fine) {
+    .navbar .navbar-brand:hover img {
+        transform: scale(1.04);
+    }
+
+    .navbar .navbar-nav .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+}
+
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
 
+    .navbar .navbar-nav .nav-link::after {
+        bottom: 4px;
+    }
+
     .navbar .navbar-nav {
-        border-top: 1px solid #EEEEEE;
+        border-top: 1px solid var(--hairline);
+    }
+
+    /* The mobile panel opens and closes along the same path */
+    .navbar-collapse.collapsing,
+    .navbar-collapse.show {
+        transition: height var(--dur-panel) var(--ease-drawer);
     }
 }
 
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        border: none;
-        margin-top: 0;
-        top: 150%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        top: 100%;
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-    }
-}
-
-
-/*** Header ***/
+/*** Header / carousel ***/
 .carousel-caption {
     top: 0;
     left: 0;
@@ -217,8 +455,12 @@ h6,
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* background: rgba(56, 49, 45, 0.6); */
     z-index: 1;
+}
+
+.headerImageText {
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.4);
+    letter-spacing: -0.03em;
 }
 
 .carousel-control-prev,
@@ -231,11 +473,12 @@ h6,
     width: 15%;
 }
 
-.px-lg-5{
+.px-lg-5 {
     padding-right: 3rem !important;
     padding-left: 1rem !important;
 }
-.px-l1{
+
+.px-l1 {
     padding-left: 5px !important;
 }
 
@@ -243,20 +486,34 @@ h6,
 .carousel-control-next-icon {
     width: 3rem;
     height: 3rem;
-    border-radius: 6rem;
+    border-radius: var(--radius-pill);
     padding: 0.25rem;
     background-color: var(--primary);
-    /* border: 10px solid var(--primary); */
+    box-shadow: var(--shadow-2);
+    transition: transform var(--dur-press) var(--ease-out), opacity var(--dur-hover) ease;
 }
 
 .mini-carousel-control-prev-icon,
 .mini-carousel-control-next-icon {
     width: 2rem;
     height: 2rem;
-    border-radius: 4rem;
+    border-radius: var(--radius-pill);
     padding: 0.25rem;
     background-color: var(--primary);
-    /* border: 10px solid var(--primary); */
+    box-shadow: var(--shadow-1);
+    transition: transform var(--dur-press) var(--ease-out);
+}
+
+.carousel-control-prev:active .carousel-control-prev-icon,
+.carousel-control-next:active .carousel-control-next-icon,
+.carousel-control-prev:active .mini-carousel-control-prev-icon,
+.carousel-control-next:active .mini-carousel-control-next-icon {
+    transform: scale(0.94);
+}
+
+#PersonalCarousel .carousel-item img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
 }
 
 @media (max-width: 768px) {
@@ -264,7 +521,7 @@ h6,
         position: relative;
         min-height: 450px;
     }
-    
+
     #header-carousel .carousel-item img {
         position: absolute;
         width: 100%;
@@ -278,7 +535,7 @@ h6,
     background-size: cover;
 }
 
-.page-header .breadcrumb-item+.breadcrumb-item::before {
+.page-header .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
 }
 
@@ -288,6 +545,20 @@ h6,
     color: var(--light);
 }
 
+/*** Embedded document surface (CV, contact) ***/
+.embed-surface {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-2);
+    overflow: hidden;
+}
+
+.embed-surface iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
 
 /*** Top Feature ***/
 @media (min-width: 991.98px) {
@@ -298,62 +569,129 @@ h6,
     }
 }
 
-
-
-/*** Project Portfolio ***/
-#portfolio-flters {
-    display: inline-block;
-    background: var(--light);
-    padding: 10px 15px;
+/*** Filter tabs (projects + photography) ***/
+.filter-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.375rem;
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-1);
 }
 
-#portfolio-flters li {
+.filter-tabs li[hidden] {
+    display: none;
+}
+
+.filter-tabs li {
+    position: relative;
     display: inline-block;
+    padding: 0.5rem 1.125rem;
+    border-radius: var(--radius-pill);
+    color: var(--ink-500);
     font-weight: 500;
-    color: var(--primary);
+    font-size: 0.9375rem;
+    letter-spacing: 0.005em;
     cursor: pointer;
-    transition: .5s;
-    border-bottom: 2px solid transparent;
+    user-select: none;
+    transition:
+        color var(--dur-hover) ease,
+        background-color var(--dur-hover) ease,
+        transform var(--dur-press) var(--ease-out);
 }
 
-#portfolio-flters li:hover,
-#portfolio-flters li.active {
-    color: var(--dark);
-    border-color: var(--dark);
+.filter-tabs li:active {
+    transform: scale(0.97);
 }
 
+.filter-tabs li.active {
+    color: var(--light);
+    background-color: var(--primary);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .filter-tabs li:hover:not(.active) {
+        color: var(--ink-900);
+        background-color: var(--surface-sunken);
+    }
+}
+
+/* Legacy id kept for the existing projects markup */
+#portfolio-flters {
+    display: inline-flex;
+}
+
+/*** Project portfolio cards ***/
 .portfolio-inner {
     position: relative;
     overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: var(--surface-1);
+    box-shadow: var(--shadow-1);
+    transition:
+        transform var(--dur-hover) var(--ease-out),
+        box-shadow var(--dur-hover) var(--ease-out);
+}
+
+.portfolio-inner:active {
+    transform: scale(0.985);
 }
 
 .portfolio-item {
-    min-height: 350px; /* Adjust based on content */
+    min-height: 350px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
 
+/* The reveal lives on the inner card, never on the grid cell: Isotope drives
+   the cell's own opacity to filter it, and two systems animating one property
+   means its hide transition never completes. Opacity only here, so the reveal
+   also stays out of the way of the hover lift below. */
+.portfolio-inner.reveal,
+.portfolio-inner.reveal.is-visible {
+    transform: none;
+}
+
+.portfolio-inner img {
+    display: block;
+    width: 100%;
+}
+
+/* Curtain closes from both edges. scaleX instead of animating width, so it
+   stays on the compositor.
+
+   The halves meet by sharing a computed edge (right/left: 50%) rather than
+   each being given a width. Two 50.02%-wide halves overlap by 0.04%, and
+   because the curtain is semi-transparent that sliver composites twice into a
+   visible dark line wherever the fraction lands on a whole device pixel. */
 .portfolio-inner::before,
 .portfolio-inner::after {
     position: absolute;
     content: "";
-    width: 0;
     height: 100%;
     top: 0;
-    left: 0;
     background: var(--curtain);
-    transition: .5s;
+    transform: scaleX(0);
+    transition: transform var(--dur-panel) var(--ease-out);
+    z-index: 2;
+}
+
+.portfolio-inner::before {
+    left: 0;
+    right: 50%;
+    transform-origin: left center;
 }
 
 .portfolio-inner::after {
-    left: auto;
+    left: 50%;
     right: 0;
-}
-
-.portfolio-inner:hover::before,
-.portfolio-inner:hover::after {
-    width: 50.02%;
+    transform-origin: right center;
 }
 
 .portfolio-inner .portfolio-text {
@@ -366,15 +704,16 @@ h6,
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: .5s;
     z-index: 3;
     opacity: 0;
     color: var(--secondary);
+    transition: opacity var(--dur-hover) var(--ease-out);
 }
 
-.portfolio-inner:hover .portfolio-text {
-    transition-delay: .3s;
-    opacity: 1;
+.portfolio-inner .portfolio-text .btn {
+    background: var(--primary);
+    color: var(--light);
+    border-color: var(--primary);
 }
 
 .portfolio-inner .portfolio-text .btn:hover {
@@ -383,9 +722,70 @@ h6,
     border-color: var(--primary);
 }
 
-.portfolio-inner .portfolio-text .btn {
-    background: var(--primary);
-    color: var(--light);
+.curtainText {
+    color: var(--ink-700) !important;
+    font-size: 1.0625rem;
+    padding-bottom: 0.75rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .portfolio-inner:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-3);
+    }
+
+    .portfolio-inner:hover::before,
+    .portfolio-inner:hover::after {
+        transform: scaleX(1);
+    }
+
+    .portfolio-inner:hover .portfolio-text {
+        opacity: 1;
+        transition-delay: 60ms;
+    }
+}
+
+/* Touch devices have no hover, so the action must always be reachable */
+@media (hover: none), (pointer: coarse) {
+    .portfolio-inner .portfolio-text {
+        position: static;
+        height: auto;
+        opacity: 1;
+        padding-bottom: 1rem;
+    }
+}
+
+/*** Modals — dim to focus, and the dialog arrives as a real surface ***/
+.modal-backdrop.show {
+    opacity: 0.45;
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+
+.modal-content {
+    border: 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-3);
+    background-color: var(--surface-1);
+}
+
+/* Modals are exempt from origin-anchoring: they are not tied to a trigger */
+.modal.fade .modal-dialog {
+    transform: scale(0.96);
+    opacity: 0;
+    transition:
+        transform var(--dur-panel) var(--ease-out),
+        opacity var(--dur-panel) var(--ease-out);
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Exit is quicker than entry — the system responding, not the user deciding */
+.modal.fade:not(.show) .modal-dialog {
+    transition-duration: 180ms;
 }
 
 /*** Footer ***/
@@ -397,7 +797,7 @@ h6,
     color: var(--light);
     font-weight: normal;
     text-transform: capitalize;
-    transition: .3s;
+    transition: color var(--dur-hover) ease;
 }
 
 .text-primary {
@@ -414,19 +814,101 @@ h6,
 
 .footer .btn.btn-link:hover {
     color: var(--primary);
-    letter-spacing: 1px;
     box-shadow: none;
 }
 
 .copyright {
     color: var(--light);
     background: var(--secondary);
+    letter-spacing: 0.01em;
 }
 
 .copyright a {
     color: var(--light);
+    text-underline-offset: 0.16em;
 }
 
 .copyright a:hover {
-    color: var(--dark);
+    color: var(--ink-700);
+}
+
+/*** Accessibility preferences ***/
+
+/* Gentler, not none: keep what aids comprehension, drop the movement */
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-clip {
+        transform: none;
+        clip-path: none;
+        transition: opacity 200ms ease;
+    }
+
+    .reveal.is-visible {
+        transform: none;
+    }
+
+    .back-to-top {
+        transform: none;
+    }
+
+    .back-to-top.is-visible {
+        transform: none;
+    }
+
+    .btn:active,
+    .filter-tabs li:active,
+    .portfolio-inner:active,
+    .navbar .navbar-nav .nav-link:active {
+        transform: none;
+    }
+
+    .portfolio-inner:hover {
+        transform: none;
+    }
+
+    .modal.fade .modal-dialog {
+        transform: none;
+        transition: opacity 200ms ease;
+    }
+
+    #spinner .spinner-border {
+        animation-duration: 1.2s;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .site-nav,
+    .site-nav.is-scrolled {
+        background-color: var(--surface-0);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: 1px solid var(--hairline);
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.6;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --hairline: rgba(27, 39, 51, 0.35);
+        --ink-500: #46566b;
+    }
+
+    .site-nav,
+    .site-nav.is-scrolled {
+        background-color: var(--surface-0);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-bottom: 1px solid var(--hairline);
+    }
+
+    .filter-tabs,
+    .portfolio-inner,
+    .embed-surface {
+        border: 1px solid var(--hairline);
+    }
 }

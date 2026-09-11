@@ -1,0 +1,351 @@
+/********** Photography gallery + lightbox **********/
+
+/*** Album index — large 16:9 covers, two up ***/
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 640px) {
+    .album-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.album-card {
+    margin: 0;
+}
+
+.album-link {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: var(--surface-sunken);
+    transition: transform var(--dur-hover) var(--ease-out);
+}
+
+.album-link:active {
+    transform: scale(0.99);
+}
+
+.album-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--dur-overlay) var(--ease-out);
+}
+
+/* The label sits on a scrim so it stays legible over any photo */
+.album-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgba(12, 17, 23, 0.35), rgba(12, 17, 23, 0.55));
+    transition: opacity var(--dur-hover) var(--ease-out);
+}
+
+.album-name {
+    font-family: "Jost", system-ui, sans-serif;
+    font-size: clamp(1.25rem, 2.4vw, 1.875rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 16px rgba(0, 0, 0, 0.5);
+}
+
+.album-count {
+    font-size: 0.8125rem;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* With a pointer, the photo carries the tile and the label arrives on hover.
+   Touch devices have no hover, so the label stays put. */
+@media (hover: hover) and (pointer: fine) {
+    .album-label {
+        opacity: 0;
+    }
+
+    .album-link:hover .album-label,
+    .album-link:focus-visible .album-label {
+        opacity: 1;
+    }
+
+    .album-link:hover img {
+        transform: scale(1.03);
+    }
+}
+
+/*** Album page — justified rows, sized in JS from each photo's ratio ***/
+.photo-rows {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap, 8px);
+}
+
+.photo-cell {
+    margin: 0;
+    /* width/height are set per photo so each row fills the full width */
+}
+
+.photo-tile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    cursor: zoom-in;
+    transition:
+        transform var(--dur-hover) var(--ease-out),
+        box-shadow var(--dur-hover) var(--ease-out);
+}
+
+.photo-tile:active {
+    transform: scale(0.985);
+}
+
+.photo-tile img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .photo-tile:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-3);
+    }
+}
+
+.album-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--ink-500);
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: color var(--dur-hover) ease, transform var(--dur-press) var(--ease-out);
+}
+
+.album-back:hover {
+    color: var(--primary);
+}
+
+.album-back:active {
+    transform: scale(0.97);
+}
+
+.gallery-empty {
+    background-color: var(--surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.gallery-empty p {
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--ink-500);
+}
+
+/*** Lightbox ***/
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.75rem, 4vw, 3rem);
+}
+
+.lightbox[hidden] {
+    display: none;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(12, 17, 23, 0.86);
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    opacity: 0;
+    transition: opacity var(--dur-overlay) var(--ease-out);
+}
+
+.lightbox-figure {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.875rem;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    transform: scale(0.96);
+    transition:
+        opacity var(--dur-overlay) var(--ease-out),
+        transform var(--dur-overlay) var(--ease-out);
+    touch-action: none;
+}
+
+.lightbox.is-open .lightbox-backdrop,
+.lightbox.is-open .lightbox-figure {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Exit is quicker than entry */
+.lightbox.is-closing .lightbox-backdrop,
+.lightbox.is-closing .lightbox-figure {
+    transition-duration: 200ms;
+}
+
+/* While a finger is on the image, it tracks 1:1 with no transition */
+.lightbox-figure.is-dragging {
+    transition: none;
+}
+
+.lightbox-img {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 11rem);
+    width: auto;
+    height: auto;
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.04);
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+.lightbox-caption {
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.9375rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    max-width: 60ch;
+    margin: 0;
+}
+
+.lightbox-caption .lightbox-count {
+    display: block;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.8125rem;
+    margin-top: 0.25rem;
+}
+
+.lightbox-btn {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-pill);
+    color: var(--light);
+    background-color: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition:
+        background-color var(--dur-hover) ease,
+        transform var(--dur-press) var(--ease-out),
+        opacity var(--dur-hover) ease;
+}
+
+.lightbox-btn:active {
+    transform: scale(0.94);
+}
+
+.lightbox-btn[disabled] {
+    opacity: 0.25;
+    cursor: default;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .lightbox-btn:not([disabled]):hover {
+        background-color: rgba(255, 255, 255, 0.26);
+    }
+}
+
+.lightbox-close {
+    top: clamp(0.75rem, 3vw, 1.75rem);
+    right: clamp(0.75rem, 3vw, 1.75rem);
+}
+
+.lightbox-prev {
+    left: clamp(0.75rem, 3vw, 1.75rem);
+    top: 50%;
+    margin-top: -22px;
+}
+
+.lightbox-next {
+    right: clamp(0.75rem, 3vw, 1.75rem);
+    top: 50%;
+    margin-top: -22px;
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .photo-tile:active,
+    .photo-tile:hover,
+    .album-link:active,
+    .album-link:hover img,
+    .album-back:active,
+    .lightbox-btn:active {
+        transform: none;
+    }
+
+    .lightbox-figure {
+        transform: none;
+        transition: opacity 200ms ease;
+    }
+
+    .lightbox.is-open .lightbox-figure {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .lightbox-backdrop {
+        background-color: rgb(12, 17, 23);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .lightbox-btn {
+        background-color: rgba(255, 255, 255, 0.24);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+}

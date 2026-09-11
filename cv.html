@@ -35,19 +35,18 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
     
         <!-- Customized Bootstrap Stylesheet -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
     
-        <!-- Template Stylesheet -->
+        <!-- Site Stylesheets -->
         <link href="css/style.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
+        <link href="css/cv.css" rel="stylesheet">
     </head>
 
 <body>
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 site-nav">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="img/Logo.png" alt="Logo" width="50" height="50" class="me-2"> <!-- Adjust size if needed -->
             <h1 class="m-0">Nigel Barnett</h1>
@@ -67,11 +66,395 @@
     </nav>
     <!-- Navbar End -->
 
-    <!-- CV Embed Section -->
-    <div class="container my-5 text-center">
-        <h1 class="display-5 mb-4">My CV</h1>
-        <iframe src="https://docs.google.com/document/d/18HlQGmA05mcQFn624Xro3-aNcZcbcm4RRe3DBOqouqI/edit?usp=sharing" width="100%" height="800px" style="border: none;"></iframe>
+    <!-- CV Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <article class="cv-page mx-auto">
+
+                <header class="cv-head reveal">
+                    <h1 class="display-5 mb-2">Nigel Barnett</h1>
+                    <p class="cv-contact mb-4">
+                        <a href="contact.html">Get in touch</a>
+                        <span aria-hidden="true">•</span>
+                        <a href="https://www.linkedin.com/in/netb/" target="_blank" rel="noopener noreferrer">linkedin.com/in/netb</a>
+                    </p>
+                    <div class="cv-actions">
+                        <a class="btn btn-main py-2 px-4"
+                            href="https://docs.google.com/document/d/18HlQGmA05mcQFn624Xro3-aNcZcbcm4RRe3DBOqouqI/export?format=pdf">
+                            <i class="fa fa-download me-2"></i>Download PDF
+                        </a>
+                        <a class="btn btn-quiet py-2 px-4"
+                            href="https://docs.google.com/document/d/18HlQGmA05mcQFn624Xro3-aNcZcbcm4RRe3DBOqouqI/edit?usp=sharing"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-external-link-alt me-2"></i>View the document (Google Drive)
+                        </a>
+                    </div>
+                </header>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Education</h2>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Purdue University</h3>
+                            <span class="cv-meta">West Lafayette, IN</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Ph.D. in Aeronautics and Astronautics</p>
+                            <span class="cv-meta">Expected May 2030</span>
+                        </div>
+                        <p class="cv-note">Coursework: Air Breathing Propulsion, Statistical Thermodynamics,
+                            Advanced Rocket Propulsion, Combustion</p>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Massachusetts Institute of Technology</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">B.S. in Aerospace Engineering</p>
+                            <span class="cv-meta">May 2025</span>
+                        </div>
+                        <p class="cv-note">Coursework: Principles of Automatic Control, Graduate Rocket Propulsion,
+                            Materials &amp; Structures, Signals &amp; Systems, Fluid Dynamics, Thermodynamics and
+                            Propulsion, Dynamics, Aerodynamics, Statistics &amp; Probability, Intro to Python &amp;
+                            Python Algorithms, Differential Equations, Space Systems Engineering</p>
+                    </div>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Publications</h2>
+                    <ol class="cv-pubs">
+                        <li>Barnett, N., Corrado, M., &amp; Lozano, P. (2023). Electrowetting valve manufacturing and
+                            testing for electrospray thruster production. <em>MIT Undergraduate Research Journal</em>,
+                            45, 27–29.</li>
+                        <li>Forsythe, J.A., Daigle, R., Barnett, N., Gejji, R., &amp; Slabaugh, C. (2026). Multiphase
+                            and Non-Equilibrium Effects in Highly Fuel-Rich Solid Fuel Gas Generators.
+                            <em>AIAA SciTech Forum</em>.</li>
+                    </ol>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Research Experience</h2>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Maurice J. Zucrow Laboratories — Slabaugh Group</h3>
+                            <span class="cv-meta">West Lafayette, IN</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Graduate Research Assistant</p>
+                            <span class="cv-meta">July 2025 – Present</span>
+                        </div>
+                        <ul>
+                            <li>Assisting with multiple lab projects, solid fuel RDE development, and laboratory
+                                infrastructure buildup</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Aerospace Materials and Structures Laboratory</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Electrostatically Actuated Mesh Reflectors for Space-Based Sensing of
+                                Extreme Weather</p>
+                            <span class="cv-meta">June 2024 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Combined a neural network with stereoscopic imaging to provide shape estimation on a
+                                scaled prototype of a large-diameter actuated mesh reflector for enhanced weather
+                                monitoring</li>
+                            <li>Improved metrology methods for more precise shape estimation of the mesh surface</li>
+                            <li>Implemented code and created figures for a Robotics Science and Systems publication</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Space Propulsion Laboratory</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Electrowetting Valve Manufacturing &amp; Testing</p>
+                            <span class="cv-meta">Sept. 2022 – May 2024</span>
+                        </div>
+                        <ul>
+                            <li>Experimentally characterized, defined, and validated an optimal procedure for
+                                manufacturing electrowetting valves, resulting in a 21% improvement in performance and
+                                overall faster fabrication</li>
+                            <li>Collaborated with Professor Lozano and multiple graduate students for project
+                                coordination, paper writing, revisions, and novel problem-solving</li>
+                        </ul>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Hollow Tube Cathode Prototyping</p>
+                            <span class="cv-meta">Jan. – May 2022</span>
+                        </div>
+                        <ul>
+                            <li>Developed two cathode prototypes and planned the fabrication of a cathode for realistic
+                                low-Earth orbit testing of single-polarity electrospray thrusters</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Air Force Research Laboratory Scholars Program</h3>
+                            <span class="cv-meta">Kirtland AFB, NM</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Phillips Research Scholar</p>
+                            <span class="cv-meta">May – Aug. 2022</span>
+                        </div>
+                        <ul>
+                            <li>Cooperated with other research interns and a mentor to develop and assess four prototype
+                                micrometeoroid orbital debris shields that performed 47% better than baseline models</li>
+                            <li>Designed, built, and tested 55 samples for a composite materials database</li>
+                            <li>Presented the design process and findings to Air Force staff for a conference</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Engineering Experience</h2>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Rocket Team</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Treasurer (2022–2023) | Liquid Propulsion Team Lead (2023–2024)</p>
+                            <span class="cv-meta">Sept. 2021 – May 2025</span>
+                        </div>
+                        <ul>
+                            <li>Completed safety reviews and coordinated incremental tests to perform a successful hot
+                                fire</li>
+                            <li>Led 12 undergraduate students on two bi-propellant engines: Helios &amp; Romulus</li>
+                            <li>Defined requirements and parameters for a new bi-propellant engine</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Boeing Defense, Space, &amp; Security</h3>
+                            <span class="cv-meta">Tukwila, WA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">USAF E-7A Mission Systems Engineering Intern</p>
+                            <span class="cv-meta">June – Aug. 2023</span>
+                        </div>
+                        <ul>
+                            <li>Employed CATIA to develop 75 part and assembly drawings for engineering review and
+                                documentation</li>
+                            <li>Collaborated with 15+ team members, providing feedback for over 80 other engineering
+                                drawings</li>
+                            <li>Created new and modified existing CAD models to simplify two different server rack
+                                assemblies</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Boston SEDS Alliance CubeSat Team</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Structures Team Co-Lead</p>
+                            <span class="cv-meta">Sept. 2021 – May 2022</span>
+                        </div>
+                        <ul>
+                            <li>Designed and integrated navigation and propulsion subsystems for AdoreSat and
+                                TrashSat</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Teaching Experience</h2>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Ostsee Gymnasium</h3>
+                            <span class="cv-meta">Timmendorfer Strand, Germany</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Instructor</p>
+                            <span class="cv-meta">Jan. – Feb. 2024</span>
+                        </div>
+                        <ul>
+                            <li>Taught classrooms of 25+ middle and high school students about mathematics, English, and
+                                U.S. politics</li>
+                            <li>Curated a multi-lesson water bottle rocket workshop to introduce rocket science concepts
+                                to upper-level physics students</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT AeroAstro Department</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Grader</p>
+                            <span class="cv-meta">Feb. – May 2024</span>
+                        </div>
+                        <ul>
+                            <li>Graded weekly assignments for an undergraduate thermodynamics class</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Leadership Experience</h2>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Electronic Research Society</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Shop Manager &amp; Key Holder</p>
+                            <span class="cv-meta">Jan. 2022 – May 2024</span>
+                        </div>
+                        <ul>
+                            <li>Trained students to use various shop machines and techniques safely</li>
+                            <li>Maintained the shop so that 50+ students have a safe working environment</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Rocket Team</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Treasurer</p>
+                            <span class="cv-meta">Jan. 2022 – Jan. 2023</span>
+                        </div>
+                        <ul>
+                            <li>Raised funds to support over 90 students in six different sub-teams</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">MIT Students for the Exploration and Development of Space (SEDS)</h3>
+                            <span class="cv-meta">Cambridge, MA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Vice-President | Treasurer</p>
+                            <span class="cv-meta">Sept. 2021 – Sept. 2022</span>
+                        </div>
+                        <ul>
+                            <li>Allocated and tracked the budgets of 4 project teams for the 15+ students in the MIT
+                                SEDS chapter</li>
+                            <li>Coordinated outreach efforts and community events to rejuvenate the club after COVID by
+                                60%</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Cowlitz Indian Tribe Youth Council</h3>
+                            <span class="cv-meta">Greater WA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Treasurer</p>
+                            <span class="cv-meta">June 2020 – June 2021</span>
+                        </div>
+                        <ul>
+                            <li>Represented 600+ youth across the country for the Cowlitz Tribal Government; made
+                                recommendations about how to better support tribal youth</li>
+                            <li>Budgeted and raised funds for youth events and youth support programs</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Raisbeck Aviation High School</h3>
+                            <span class="cv-meta">Tukwila, WA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">Green Energy Team — Captain, Design Team Lead</p>
+                            <span class="cv-meta">Sept. 2019 – July 2021</span>
+                        </div>
+                        <ul>
+                            <li>Pioneered the structural and aerodynamic design for the team's National Championship
+                                solar car using Autodesk Inventor and Siemens STAR-CCM+</li>
+                            <li>Trained and coordinated 20+ members on CAD, professional communication, and electronic
+                                circuit design</li>
+                        </ul>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">AIAA Chapter — Vice-President</p>
+                            <span class="cv-meta">Sept. 2017 – June 2021</span>
+                        </div>
+                        <ul>
+                            <li>Led a group project to design a human-sized rotorcraft</li>
+                            <li>Hosted professionals in the aeronautics industry to mentor and introduce 20+ students to
+                                career opportunities in the field</li>
+                        </ul>
+                    </div>
+
+                    <div class="cv-entry">
+                        <div class="cv-entry-head">
+                            <h3 class="cv-org">Washington 3D COVID-19 Medical Shield Hub</h3>
+                            <span class="cv-meta">WA</span>
+                        </div>
+                        <div class="cv-entry-head">
+                            <p class="cv-role">3D Printing Volunteer</p>
+                            <span class="cv-meta">March – June 2020</span>
+                        </div>
+                        <ul>
+                            <li>3D printed and assembled 200+ protective visors and organized their distribution to
+                                frontline workers during the early pandemic PPE shortages</li>
+                            <li>Collaborated with volunteers to fill supply chain gaps and fulfill equipment
+                                shortages</li>
+                        </ul>
+                    </div>
+
+                    <p class="cv-note">Additional affiliated groups: American Indian Science &amp; Engineering Society
+                        Member, MIT Beaver Works PiPACT</p>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Awards</h2>
+                    <ul class="cv-awards">
+                        <li>Matthew Isakowitz Fellowship Finalist <span class="cv-meta">2024</span></li>
+                        <li>Solar Car Challenge National Champion, Advanced Division <span class="cv-meta">2021</span></li>
+                        <li>Dr. James Raisbeck Legacy Scholar <span class="cv-meta">2021</span></li>
+                        <li>Raisbeck Aviation High School Class Valedictorian <span class="cv-meta">2021</span></li>
+                        <li>Washington State Honors Award <span class="cv-meta">2021</span></li>
+                        <li>Raisbeck Brittany Boatright Love-of-Learning Student of the Year <span class="cv-meta">2020</span></li>
+                        <li>SeaTac-Tukwila Rotary Student of the Month <span class="cv-meta">2020</span></li>
+                    </ul>
+                </section>
+
+                <section class="cv-section reveal">
+                    <h2 class="cv-section-title">Skills</h2>
+                    <ul class="cv-skills">
+                        <li>Additive manufacturing (DLP, FDM, SLA)</li>
+                        <li>Subtractive manufacturing (3-axis CNC &amp; manual mill, lathe)</li>
+                        <li>CATIA</li>
+                        <li>SolidWorks</li>
+                        <li>Fusion 360</li>
+                        <li>AutoCAD</li>
+                        <li>HSMWorks / CAM</li>
+                        <li>Drafting</li>
+                        <li>MATLAB</li>
+                        <li>Python</li>
+                        <li>PyTorch</li>
+                        <li>Digital Image Correlation</li>
+                        <li>Desmos</li>
+                        <li>Microsoft Office Suite</li>
+                    </ul>
+                </section>
+
+            </article>
+        </div>
     </div>
+    <!-- CV End -->
 
     <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
@@ -95,12 +478,10 @@
     <!-- Copyright End -->
      
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
 
 <!-- Template Javascript -->
+<script src="js/motion.js"></script>
 <script src="js/main.js"></script>
 </body>
 

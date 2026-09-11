@@ -34,14 +34,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
 
     <link rel="canonical" href="https://netb.me/">
 
@@ -70,14 +68,14 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!-- Spinner End -->
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 site-nav">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="img/Logo.png" alt="Logo" width="50" height="50" class="me-2"> <!-- Adjust size if needed -->
             <h1 class="m-0">Nigel Barnett</h1>
@@ -99,7 +97,7 @@
 
 
     <!-- Carousel Start -->
-    <div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container-fluid p-0 reveal">
         <div id="header-carousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -125,7 +123,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5 align-items-start">
-                <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-3 col-md-5 reveal">
                     <div id="PersonalCarousel" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -154,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-8 col-md-7 reveal">
                     <h1 class="display-5 mb-4">Who am I?</h1>
                     <p class="mb-3">Hello there, my name is Nigel Barnett. I am an MIT alumni of the class of 2025 and am 
                         continuing my education at Purdue University as a PhD student in the <a class="hyperlink" href="https://engineering.purdue.edu/SlabaughGroup/" target="_blank" rel="noopener noreferrer">Slabaugh Group</a>
@@ -174,13 +172,13 @@
     <!-- Projects Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto reveal" style="max-width: 500px;">
                 <h1 class="display-5 mb-5">Featured Projects</h1>
             </div>
             <!-- Projects Container -->
             <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-inner rounded">
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-inner rounded reveal">
                         <img class="img-fluid" src="img/Goggles/PhotoShoot2.webp" alt="Goggles">
                         <h4 class="curtainText text-center pt-1">DIY Night Vision</h4>
                         <div class="portfolio-text">
@@ -190,8 +188,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-inner rounded">
+                <div class="col-lg-4 col-md-6 portfolio-item second">
+                    <div class="portfolio-inner rounded reveal">
                         <img class="img-fluid" src="img/Bike/Esplanade.webp" alt="Bike on Vice" width="100%">
                         <h4 class="curtainText text-center pt-1">DIY Bike</h4>
                         <div class="portfolio-text">
@@ -201,8 +199,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="portfolio-inner rounded">
+                <div class="col-lg-4 col-md-6 portfolio-item first">
+                    <div class="portfolio-inner rounded reveal">
                         <img class="img-fluid" src="img/Electrowetting/Plasma.webp" alt="Electrowetting valve blanks being plasma ashed" width="100%">
                         <h4 class="curtainText text-center pt-1">Electrowetting Valve UROP</h4>
                         <div class="portfolio-text">
@@ -558,15 +556,15 @@
 </div>
 <!-- Copyright End -->
 
+<a href="#" class="btn btn-lg btn-main btn-lg-square back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
+
     
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 
 <!-- Template Javascript -->
+<script src="js/motion.js"></script>
 <script src="js/main.js"></script>
 </body>
 

@@ -1,0 +1,5 @@
+.claude/
+.vs/
+
+# Full-size originals stashed by tools/photos.py — kept locally, never published
+img/Photography/_originals/

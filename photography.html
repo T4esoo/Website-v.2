@@ -1,149 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Photography — Nigel Barnett</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta name="keywords" content="Nigel Barnett photography portfolio MIT maker">
-        <meta name="author" content="Nigel Barnett">
-        <meta name="description" content="A gallery of photography by Nigel Barnett.">
 
-        <!-- Open Graph / Twitter -->
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Photography — Nigel Barnett">
-        <meta property="og:description" content="A gallery of photography by Nigel Barnett.">
-        <meta property="og:url" content="https://netb.me/photography.html">
-        <meta property="og:image" content="https://netb.me/img/Headshot_2022.webp">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Photography — Nigel Barnett">
-        <meta name="twitter:description" content="A gallery of photography by Nigel Barnett.">
-        <meta name="twitter:image" content="https://netb.me/img/Headshot_2022.webp">
+<head>
+    <meta charset="utf-8">
+    <title>Photography — Nigel Barnett</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="Nigel Barnett photography portfolio MIT maker">
+    <meta name="author" content="Nigel Barnett">
+    <meta name="description" content="A gallery of photography by Nigel Barnett.">
 
-        <link rel="canonical" href="https://netb.me/photography.html">
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Photography — Nigel Barnett">
+    <meta property="og:description" content="A gallery of photography by Nigel Barnett.">
+    <meta property="og:url" content="https://netb.me/photography.html">
+    <meta property="og:image" content="https://netb.me/img/Headshot_2022.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Photography — Nigel Barnett">
+    <meta name="twitter:description" content="A gallery of photography by Nigel Barnett.">
+    <meta name="twitter:image" content="https://netb.me/img/Headshot_2022.webp">
 
-        <!-- Favicon -->
-        <link href="img/Logo.png" rel="icon">
+    <link rel="canonical" href="https://netb.me/photography.html">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="img/Logo.png" rel="icon">
 
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-        <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/index.css" rel="stylesheet">
+    <!-- Site Stylesheets -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/gallery.css" rel="stylesheet">
+</head>
 
-        <!-- Inline CSS for responsive Flickr embed -->
-        <style>
-            .responsive-flickr-embed img {
-                max-width: 100%;
-                height: auto;
-            }
-        </style>
-    </head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
 
-    <body>
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
-        </div>
-        <!-- Spinner End -->
-
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
-            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                <img src="img/Logo.png" alt="Logo" width="50" height="50" class="me-2">
-                <h1 class="m-0">Nigel Barnett</h1>
-            </a>
-            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="projects.html" class="nav-item nav-link">Projects</a>
-                    <a href="cv.html" class="nav-item nav-link">CV</a>
-                    <a href="photography.html" class="nav-item nav-link active">Photography</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-            </div>
-        </nav>
-        <!-- Navbar End -->
-
-        <!-- Photography/Flickr Embed Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-12 wow fadeIn text-center" data-wow-delay="0.1s">
-                        <div class="responsive-flickr-embed">
-                            <a data-flickr-embed="true" 
-                               href="https://www.flickr.com/photos/202301591@N02/albums/72177720324069259" 
-                               title="Display">
-                                <!-- Removed width/height attributes -->
-                                <img src="https://live.staticflickr.com/65535/54349652620_98a207ce2d_z.jpg" alt="Display" />
-                            </a>
-                            <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-                        </div>
-                        
-                        <!-- Centered text below the Flickr embed -->
-                        <p class="mt-4 text-center">
-                            Pre 3/2025: Taken on a Canon EOS Rebel T8i.
-                        </p>
-                        <p class="mt-4 text-center">
-                            Post: Sony A6400.
-                        </p>
-                    </div>
-                </div>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 site-nav">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/Logo.png" alt="Logo" width="50" height="50" class="me-2">
+            <h1 class="m-0">Nigel Barnett</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="projects.html" class="nav-item nav-link">Projects</a>
+                <a href="cv.html" class="nav-item nav-link">CV</a>
+                <a href="photography.html" class="nav-item nav-link active">Photography</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
             </div>
         </div>
-        <!-- Photography/Flickr Embed End -->
+    </nav>
+    <!-- Navbar End -->
 
-        <!-- Copyright Start -->
-        <div class="container-fluid copyright py-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 wow fadeIn text-center" data-wow-delay="0.1s">
-                        &copy; <a class="border-bottom" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">netb.me</a>
+    <!-- Gallery Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+
+            <div id="gallery-intro" class="gallery-intro text-center mx-auto mb-5" style="max-width: 40rem;">
+                <h1 class="display-5 mb-0 reveal">Photography</h1>
+            </div>
+
+            <!-- Album index -->
+            <ul id="album-index" class="album-grid" hidden></ul>
+
+            <!-- A single album -->
+            <section id="album-view" hidden>
+                <div class="mb-4">
+                    <a class="album-back reveal" href="#">
+                        <i class="fa fa-chevron-left"></i>All albums
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <h1 id="album-title" class="display-6 mb-2 reveal"></h1>
+                    <p id="album-blurb" class="section-lead mb-0 reveal" hidden></p>
+                </div>
+                <div id="photo-rows" class="photo-rows"></div>
+            </section>
+
+            <div id="gallery-empty" class="gallery-empty reveal" hidden>
+                <h4 class="mb-3">The gallery is being rebuilt</h4>
+                <p class="mb-4" style="max-width: 36rem;">
+                    Photos are moving over to this site one batch at a time. In the meantime,
+                    the full archive lives on Flickr.
+                </p>
+                <a class="btn btn-main py-2 px-4" href="https://www.flickr.com/photos/202301591@N02/albums/72177720324069259" target="_blank" rel="noopener noreferrer">
+                    View the album on Flickr
+                </a>
+            </div>
+
+            <div id="gallery-flickr-link" class="text-center mt-5 reveal">
+                <a class="btn btn-quiet py-2 px-4" href="https://www.flickr.com/photos/202301591@N02/albums/72177720324069259" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-flickr me-2"></i>View the full album on Flickr
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- Gallery End -->
+
+    <!-- Lightbox Start -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <div class="lightbox-backdrop"></div>
+        <figure class="lightbox-figure">
+            <img class="lightbox-img" src="" alt="">
+            <figcaption class="lightbox-caption">
+                <span class="lightbox-caption-text"></span>
+                <span class="lightbox-count"></span>
+            </figcaption>
+        </figure>
+        <button type="button" class="lightbox-btn lightbox-close" aria-label="Close photo viewer">
+            <i class="fa fa-times"></i>
+        </button>
+        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Previous photo">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        <button type="button" class="lightbox-btn lightbox-next" aria-label="Next photo">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+    <!-- Lightbox End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row gy-2 align-items-center">
+                <div class="col-md-4 text-center text-md-start">
+                    &copy; <a class="border-bottom" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">netb.me</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.linkedin.com/in/netb/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="btn btn-square btn-outline-light rounded-circle" href="contact.html" aria-label="Contact">
+                            <i class="fa fa-envelope"></i>
+                        </a>
                     </div>
-                    <div class="col-md-4 text-center text-md-end">
-                        <div class="d-flex p-2 justify-content-center">
-                            <a class="btn btn-square btn-outline-light rounded-circle me-2" 
-                               href="https://www.linkedin.com/in/netb/" 
-                               target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a class="btn btn-square btn-outline-light rounded-circle me-2" 
-                               href="contact.html">
-                                <i class="fa fa-envelope"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 text-center text-md-end">
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>
-                        Distributed By <a href="https://themewagon.com">ThemeWagon</a>
-                    </div>
+                </div>
+                <div class="col-md-4 text-center text-md-end small">
+                    Designed By <a class="border-bottom" href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>
                 </div>
             </div>
         </div>
-        <!-- Copyright End -->
+    </div>
+    <!-- Copyright End -->
 
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
+    <a href="#" class="btn btn-lg btn-main btn-lg-square back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></a>
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/photos-data.js"></script>
+    <script src="js/motion.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
