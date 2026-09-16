@@ -34,11 +34,17 @@
         });
 
         // Images settle at unknown heights; re-layout once they have loaded.
+        // This packaged Isotope build does not reliably expose imagesLoaded, so
+        // never rely on it alone: without a re-layout the cards are positioned at
+        // their min-height and then overlap once the real (taller) images load.
         if (typeof window.imagesLoaded === "function") {
             window.imagesLoaded(container, function () {
                 iso.layout();
             });
         }
+        window.addEventListener("load", function () {
+            iso.layout();
+        });
 
         var bar = document.getElementById("portfolio-flters");
         var filters = document.querySelectorAll("#portfolio-flters li");
